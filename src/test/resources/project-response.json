@@ -1,0 +1,15 @@
+{
+  "key": "QA",
+  "id": 2,
+  "name": "QA project",
+  "description": "QA description",
+  "public": true,
+  "type": "NORMAL",
+  "links": {
+    "self": [
+      {
+        "href": "http://localhost:7990/bitbucket/projects/QA"
+      }
+    ]
+  }
+}

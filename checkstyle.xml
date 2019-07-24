@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+<!--
+  Checkstyle configuration that checks the sun coding conventions from:
+
+    - the Java Language Specification at
+      http://java.sun.com/docs/books/jls/second_edition/html/index.html
+
+    - the Sun Code Conventions at http://java.sun.com/docs/codeconv/
+
+    - the Javadoc guidelines at
+      http://java.sun.com/j2se/javadoc/writingdoccomments/index.html
+
+    - the JDK Api documentation http://java.sun.com/j2se/docs/api/index.html
+
+    - some best practices
+
+  Checkstyle is very configurable. Be sure to read the documentation at
+  http://checkstyle.sf.net (or in your downloaded distribution).
+
+  Most Checks are configurable, be sure to consult the documentation.
+
+  To completely disable a check, just comment it out or delete it from the file.
+
+  Finally, it is worth reading the documentation.
+-->
+
+<module name="Checker">
+    <module name="SuppressionFilter">
+        <property name="file" value="checkstyle-suppressions.xml"/>
+    </module>
+
+    <property name="charset" value="UTF-8"/>
+    <!-- Checks for Size Violations.                    -->
+    <!-- See http://checkstyle.sf.net/config_sizes.html -->
+    <module name="FileLength">
+        <property name="max" value="5000"/>
+    </module>
+    <!-- Checks for whitespace                               -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+    <module name="FileTabCharacter"/>
+    <module name="TreeWalker">
+        <module name="SuppressionCommentFilter"/>
+        <module name="DeclarationOrder">
+            <property name="id" value="NoTests"/>
+        </module>
+        <module name="PackageName"/>
+        <module name="TypeName"/>
+        <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
+        <module name="IllegalImport">
+            <property name="illegalPkgs" value="clover, junit.framework, org.apache.commons.lang"/>
+        </module>
+        <module name="RedundantImport"/>
+        <module name="UnusedImports"/>
+        <!-- Checks for whitespace                               -->
+        <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+        <module name="EmptyForIteratorPad"/>
+        <module name="EmptyLineSeparator">
+            <!-- All the normal except VARIABLE_DEF -->
+            <property name="tokens" value="CLASS_DEF, CTOR_DEF, ENUM_DEF, IMPORT, INSTANCE_INIT, INTERFACE_DEF, METHOD_DEF, PACKAGE_DEF, STATIC_INIT"/>
+            <property name="allowMultipleEmptyLines" value="false"/>
+            <property name="allowMultipleEmptyLinesInsideClassMembers" value="false"/>
+        </module>
+        <module name="EmptyLineAfterDefinition">
+            <!-- Disabled for enums so "compact" defintions - with only enum values - don't require an initial blank line -->
+            <property name="tokens" value="CLASS_DEF, INTERFACE_DEF"/>
+        </module>
+        <module name="GenericWhitespace"/>
+        <module name="MethodParamPad"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="OperatorWrap">
+            <!-- The below settings contain everything except: COLON,PLUS,QUESTION -->
+            <!-- PLUS only because there are already too many usages -->
+            <property name="tokens"
+                      value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,DIV,DIV_ASSIGN,
+                      EQUAL,GE,GT,LAND,LE,LITERAL_INSTANCEOF,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,
+                      PLUS_ASSIGN,SL,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,METHOD_REF"/>
+            <property name="option" value="EOL"/>
+        </module>
+        <module name="ParenPad"/>
+        <module name="SingleSpaceSeparator"/>
+        <module name="TypecastParenPad"/>
+        <module name="WhitespaceAfter"/>
+        <module name="BitbucketWhitespaceAround">
+            <!-- removed these from default: GENERIC_START  GENERIC_END, WILDCARD_TYPE -->
+            <!-- TMP TODO remove RCURLY becauuse of annotations like
+             @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+            -->
+            <!-- Tom Davies: removed LCURLY to allow empty interfaces, e.g.
+                interface Binder extends UiBinder<Widget, ChangesetDiscussionPanel> {}
+            -->
+            <property name="tokens"
+                      value="ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, EQUAL, GE, GT, LAMBDA, LAND, LE, LITERAL_ASSERT, LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_RETURN, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS, MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, SL, SLIST, SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN, TYPE_EXTENSION_AND"/>
+            <property name="ignoredParents" value="ANNOTATION_MEMBER_VALUE_PAIR"/>
+        </module>
+        <!-- Modifier Checks                                    -->
+        <!-- See http://checkstyle.sf.net/config_modifiers.html -->
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier">
+            <property name="tokens" value="VARIABLE_DEF, ANNOTATION_FIELD_DEF"/>
+        </module>
+        <!-- Checks for blocks. You know, those {}'s         -->
+        <!-- See http://checkstyle.sf.net/config_blocks.html -->
+        <!-- TMP <module name="AvoidNestedBlocks"/>-->
+        <module name="EmptyBlock">
+            <property name="option" value="text"/>
+        </module>
+        <module name="LeftCurly"/>
+        <module name="NeedBraces"/>
+        <module name="RightCurly"/>
+        <!-- Checks for common coding problems               -->
+        <!-- See http://checkstyle.sf.net/config_coding.html -->
+        <module name="EmptyStatement"/>
+        <module name="EqualsHashCode"/>
+        <module name="IllegalInstantiation"/>
+        <module name="PackageDeclaration"/>
+        <module name="SimplifyBooleanExpression"/>
+        <!-- Miscellaneous other checks.                   -->
+        <!-- See http://checkstyle.sf.net/config_misc.html -->
+        <module name="ArrayTypeStyle"/>
+        <!--<module name="FinalParameters"/>-->
+        <!-- TMP <module name="TodoComment"/>-->
+        <module name="UpperEll"/>
+        <module name="AllowedAnnotations">
+            <property name="annotation" value="EventListener"/>
+            <property name="incompatibleAnnotations" value="Transactional,PreAuthorize"/>
+        </module>
+        <!-- prevents AO from creating additional indexes on unique or PK columns (which will fail under Oracle) -->
+        <module name="AllowedAnnotations">
+            <property name="annotation" value="Indexed"/>
+            <property name="incompatibleAnnotations" value="PrimaryKey,Unique"/>
+        </module>
+        <!-- PK keys are unique -->
+        <module name="AllowedAnnotations">
+            <property name="annotation" value="PrimaryKey"/>
+            <property name="incompatibleAnnotations" value="Unique"/>
+        </module>
+        <module name="XMLParserConstructionUse"/>
+        <module name="GetClassTestContextUse"/>
+        <module name="MissingDeprecated">
+            <property name="skipNoJavadoc" value="true"/>
+        </module>
+    </module>
+</module>

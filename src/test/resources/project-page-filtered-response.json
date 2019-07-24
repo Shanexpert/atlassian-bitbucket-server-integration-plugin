@@ -1,0 +1,23 @@
+{
+  "size": 1,
+  "limit": 25,
+  "isLastPage": true,
+  "values": [
+    {
+      "key": "QA",
+      "id": 383,
+      "name": "QA",
+      "description": "QA",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [
+          {
+            "href": "http://localhost:7990/bitbucket/projects/QA"
+          }
+        ]
+      }
+    }
+  ],
+  "start": 0
+}

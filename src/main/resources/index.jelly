@@ -1,0 +1,8 @@
+<?jelly escape-by-default='true'?>
+<div>
+    This plugin integrates
+    <a href="https://www.atlassian.com/software/bitbucket/enterprise/data-center">Bitbucket
+        <strong>Server</strong>
+    </a>
+    with Jenkins.
+</div>

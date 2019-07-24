@@ -1,0 +1,38 @@
+{
+  "slug": "qa-resources",
+  "id": 2,
+  "name": "qa-resources",
+  "scmId": "git",
+  "state": "AVAILABLE",
+  "statusMessage": "Available",
+  "forkable": true,
+  "project": {
+    "key": "QA",
+    "id": 2,
+    "name": "QA",
+    "description": "QA",
+    "public": false,
+    "type": "NORMAL",
+    "links": {
+      "self": [
+        {
+          "href": "http://localhost:7990/bitbucket/projects/QA"
+        }
+      ]
+    }
+  },
+  "public": false,
+  "links": {
+    "clone": [
+      {
+        "href": "http://localhost:7990/bitbucket/scm/qa/qa-resources.git",
+        "name": "http"
+      }
+    ],
+    "self": [
+      {
+        "href": "http://localhost:7990/bitbucket/projects/QA/repos/qa-resources/browse"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# Link this pre-commit hook to git using:
+# ln -s -f ../../etc/git-hooks/pre-commit .git/hooks/pre-commit
+# Or configure the hooks path using:
+# git config core.hooksPath etc/git-hooks
+
+# Run checkstyle
+mvn checkstyle:check

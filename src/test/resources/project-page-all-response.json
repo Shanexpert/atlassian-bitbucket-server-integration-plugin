@@ -1,0 +1,68 @@
+{
+  "size": 4,
+  "limit": 25,
+  "isLastPage": true,
+  "values": [
+    {
+      "key": "MERGE",
+      "id": 385,
+      "name": "MERGE",
+      "description": "MERGE",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [
+          {
+            "href": "http://localhost:7990/bitbucket/projects/MERGE"
+          }
+        ]
+      }
+    },
+    {
+      "key": "PR",
+      "id": 384,
+      "name": "PR",
+      "description": "PR",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [
+          {
+            "href": "http://localhost:7990/bitbucket/projects/PR"
+          }
+        ]
+      }
+    },
+    {
+      "key": "PROJECT_1",
+      "id": 382,
+      "name": "PROJECT_1",
+      "description": "PROJECT_1",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [
+          {
+            "href": "http://localhost:7990/bitbucket/projects/PROJECT_1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "QA",
+      "id": 383,
+      "name": "QA",
+      "description": "QA",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [
+          {
+            "href": "http://localhost:7990/bitbucket/projects/QA"
+          }
+        ]
+      }
+    }
+  ],
+  "start": 0
+}
